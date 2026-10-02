@@ -11,6 +11,9 @@ jobs:
         run: |
           python3 - <<'PYTHON'
           import re
+          import os
+          import json
+          import hashlib
           import urllib.request
           from urllib.parse import urljoin
           url = "https://dj4beat.github.io/expert-pundit-dream-team/"
@@ -20,6 +23,14 @@ jobs:
                   data = response.read()
               print("Anonymous HTTP 200:", target, "bytes:", len(data))
               return data
+          revision = os.environ['GITHUB_SHA']
+          manifest_url = f"https://raw.githubusercontent.com/Dj4beat/expert-pundit-dream-team/{revision}/release-manifest.json"
+          manifest = json.loads(fetch(manifest_url))
+          for filename, expected in manifest.items():
+              body = fetch(urljoin(url, filename))
+              actual = hashlib.sha256(body).hexdigest()
+              assert actual == expected, f"Deployed bytes differ: {filename}"
+          print(f"PASS: all {len(manifest)} deployed files match the committed SHA256 manifest.")
           html = fetch(url).decode()
           assert "Legends Duel" in html
           assets = re.findall(r'(?:src|href)="(\./assets/[^"]+)"', html)
