@@ -1,0 +1,30 @@
+name: Check public game link
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  public-access:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Fetch the game anonymously from a GitHub-hosted runner
+        run: |
+          python3 - <<'PYTHON'
+          import re
+          import urllib.request
+          from urllib.parse import urljoin
+          url = "https://dj4beat.github.io/expert-pundit-dream-team/"
+          def fetch(target):
+              with urllib.request.urlopen(target, timeout=30) as response:
+                  assert response.status == 200
+                  data = response.read()
+              print("Anonymous HTTP 200:", target, "bytes:", len(data))
+              return data
+          html = fetch(url).decode()
+          assert "Legends Duel" in html
+          assets = re.findall(r'(?:src|href)="(\./assets/[^"]+)"', html)
+          assert len(assets) == 2
+          for asset in assets:
+              assert len(fetch(urljoin(url, asset))) > 1000
+          print("PASS: public game and both entry assets are accessible from GitHub infrastructure without login or authorization headers.")
+          PYTHON
