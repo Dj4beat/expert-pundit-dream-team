@@ -1,0 +1,50 @@
+[
+  {
+    "id": "england-germany",
+    "title": "England v Germany",
+    "file": "england-germany.html",
+    "players": 40,
+    "scopes": [
+      "career",
+      "international"
+    ],
+    "bytes": 4369750,
+    "sha256": "37ee7dedd50e617b500f561237969e6f41e90081bac92398959d47659e335f59"
+  },
+  {
+    "id": "brazil-argentina",
+    "title": "Brazil v Argentina",
+    "file": "brazil-argentina.html",
+    "players": 40,
+    "scopes": [
+      "career",
+      "international"
+    ],
+    "bytes": 4981672,
+    "sha256": "8b03f886c19f18209868b461ffdef5bd23de936b85f59bfd84df9e456b2dd254"
+  },
+  {
+    "id": "united-liverpool",
+    "title": "Manchester United v Liverpool",
+    "file": "united-liverpool.html",
+    "players": 39,
+    "scopes": [
+      "career",
+      "club"
+    ],
+    "bytes": 4343541,
+    "sha256": "234f20a5c43b5b6c91b0822c5da52228c26fa65ee067cf0d4bf6461048026c89"
+  },
+  {
+    "id": "arsenal-chelsea",
+    "title": "Arsenal v Chelsea",
+    "file": "arsenal-chelsea.html",
+    "players": 42,
+    "scopes": [
+      "career",
+      "club"
+    ],
+    "bytes": 4863539,
+    "sha256": "018a25f7937b9532ce402af4c2b468ee473ae0505d66b2e393f701d923fb229a"
+  }
+]

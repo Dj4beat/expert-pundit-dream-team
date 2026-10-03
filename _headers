@@ -3,3 +3,19 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'
+
+/downloads/england-germany.html
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-Ubq/v3tN1EL49RpaKOn+Xdt+6lmxQm7izquObbwWhTE='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'
+
+/downloads/brazil-argentina.html
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-g+PsgXOWvXnMChmB3x0+S9vcoc6d/Yxxvgbu8vqxQME='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'
+
+/downloads/united-liverpool.html
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-BQfT6xxmrfh/WQYCvbH52amQNBJse+fn4GiI+R3OrKk='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'
+
+/downloads/arsenal-chelsea.html
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-pxcCHEGsD7BHslMZpsP3PncwG59SStJMQTCtCgIKfq0='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'
